@@ -8,9 +8,7 @@ import Slike from "./pages/Slike"
 import Nakit from "./pages/Nakit"
 import Staklenipredmeti from "./pages/Staklenipredmeti"
 import suvenirs from './pages/suvenirs';
-
-
-
+import Home from './pages/Home';
 
 function App() {
   return (
@@ -19,6 +17,7 @@ function App() {
      <Router>
        < Navbar/>
        <Routes>
+       <Route exact path='/' element = {<Home/>}/>
          <Route exact path='/Contact' element = {<Contact/>}/>
          <Route exact path="/About" element={<About/>}/>
          <Route exact path='/Magnets' element = {<Magnets/>}/>

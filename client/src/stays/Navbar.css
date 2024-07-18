@@ -1,10 +1,38 @@
 .navbar{
-    height: 150px;
+    height: 120px;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     background-color: gainsboro;
+    padding: 20px 0px;
    
+}
+.navbar img{
+    width: 95px;
+}
+.basket{
+    font-size: 27px;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    
+}
+.basket1{
+    padding: 20px;
+    position: relative;
+}
+.basket1 .dot{
+  position: absolute;
+  min-width: 10px;
+  min-height: 10px;
+  background-color: aliceblue;
+  border-radius: 5px;
+  top: 8px;
+  right: 7px;
+}
+.basket2{
+    padding: 10px;
 }
 .menu-bars{
     margin-left: 2rem;
@@ -21,7 +49,6 @@
     top: 0;
     left: -100%;
     transition: all 1s;
-    
 }
 .nav-menu.active{
     left:0;
@@ -69,7 +96,7 @@
     justify-content: space-between;
     margin-left: 90%;
     padding: 20px;
-    line-height: 20px;
+    
     
     
 }
