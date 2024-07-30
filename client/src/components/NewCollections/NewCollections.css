@@ -1,0 +1,27 @@
+.new-collections{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    
+}
+ .new-collections p{
+    color: #444;
+    font-size: 25px;
+    font-weight: 100;
+    font-family: "Orator W01", "Gill Sans", "Gill Sans MT", calibri, serif;;
+    margin: 45px;
+}
+.new-collections hr{
+    width: 200px;
+    height: 6px;
+    border-radius: 15px;
+    background: #2b2a2a;
+    padding: 3px;
+}
+.collections{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    margin-top: 50px;
+    gap: 30px;
+}

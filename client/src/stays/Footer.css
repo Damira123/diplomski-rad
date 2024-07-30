@@ -1,0 +1,58 @@
+.footer{
+ display: flex;
+ flex-direction: column;
+ height: 50vh;
+margin: 10px;
+ gap: 0px;
+ background-color: rgb(103, 94, 94);
+ color: rgb(245, 237, 228);
+
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.contact1{
+    padding: 60px;
+
+}
+.contact1 h1{
+    font-size: 23px;
+}
+.letter p{
+    font-size: 25px;
+}
+.letter{
+    padding: 55px;
+    margin-left: 270px;
+}
+.letter input{
+    width: 250px;
+    height: 40px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    color: rgb(107, 164, 214);
+    font-size: 15px;
+
+}
+.letter button{
+    width: 120px;
+    height: 42px;
+    border: none;
+    color: rgb(52, 56, 56);
+    font-size: 15px;
+    cursor: pointer;
+}
+.social svg{
+    font-size: 22px;
+    color: aliceblue;
+    margin: 5px;
+}
+.copy p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

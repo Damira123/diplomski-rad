@@ -1,12 +1,19 @@
-
-.App{
+.App {
     align-items: center;
-   
+
 }
-body{
+
+body {
     padding: 0;
     margin: 0;
     box-sizing: 0;
 }
 
+.main-content {
+    transition: backdrop-filter 0.3s ease;
+}
 
+.main-content.active {
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}

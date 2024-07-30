@@ -1,11 +1,11 @@
 import React from 'react'
 import "../stays/Header.css"
+import RE from "../components/RE.js"
+
 function Header() {
   return (
     <div className='heder'>
-        <div className='heder-content'>
-            <h1>Dobrodošli</h1>
-        </div>
+        <RE/>
     </div>
   )
 }
