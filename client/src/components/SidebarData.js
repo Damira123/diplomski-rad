@@ -7,9 +7,14 @@ export const SidebarData = [{
    cName : "nav-text"
 },
  {
-    title: "Nakit",
-    path : "Nakit",
+    title: "Ostali predmeti",
+    path : "Ostali predmeti",
     cName : "nav-text"
+ },
+ {
+   title : "Nakit",
+   path :"Nakit",
+   cName : "nav-text"
  },
  {
     title: "Slike",
@@ -26,11 +31,7 @@ export const SidebarData = [{
    path:"/Kip",
    cName : "nav-text"
 },
-{
-   title: "Moda",
-   path:"/Moda",
-   cName : "nav-text"
-},
+
  
  {
     title:"Kontakt",

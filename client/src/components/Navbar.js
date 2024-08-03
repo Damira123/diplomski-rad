@@ -6,9 +6,11 @@ import { SidebarData } from "./SidebarData";
 import { Link } from "react-router-dom"
 import { SlBasketLoaded } from "react-icons/sl";
 import { VscAccount } from "react-icons/vsc";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ShopContext } from "./Context/ShopContext";
 function Navbar({ sidebar, setSidebar }) {
   const showSidebar = () => setSidebar(!sidebar)
+  const {getTotalcard} = useContext(ShopContext)
   return (
     <>
       <div className="navbar">
@@ -18,7 +20,7 @@ function Navbar({ sidebar, setSidebar }) {
       <Link to ="/" > <img src={Icon} /> </Link>
         <div className="basket">
           <div className="basket1">
-          <div className="nav-cart-count">0</div>
+          <div className="nav-cart-count">{getTotalcard()}</div>
             <Link to="/Cart"><SlBasketLoaded /></Link>
           </div>
           <div className="basket2">

@@ -3,6 +3,8 @@ import "../NewCollections/NewCollections.css"
 import new_data from "../NewCollections/Newdata.js"
 import Item from '../Item/Item.js'
 
+
+
 function NewCollections() {
   return (
     <div className='new-collections'>
@@ -10,7 +12,7 @@ function NewCollections() {
       <hr />
       <div className='collections'>
          {new_data.map((item,i) => {
-          return <Item key={i} id={item.id} image={item.image} name={item.name} />
+          return <Item key={i} id={item.id} image={item.image} name={item.name}  />
          })}
       </div>
     </div>

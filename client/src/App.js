@@ -6,7 +6,7 @@ import Contact from "./pages/Contact"
 import About from "./pages/About"
 import Home from './pages/Home';
 import Product from "./pages/Product"
-import ShopCategory from "./pages/ShopCategory"
+import ShopCategory from './pages/ShopCategory';
 import LoginSignup from "./pages/LoginSignup"
 import Cart from "./pages/Cart"
 import Footer from './components/Footer';
@@ -22,16 +22,17 @@ function App() {
         <div className={sidebar ? "main-content active" : "main-content"}>
           <Routes>
             <Route exact path='/' element={<Home />} />
-            <Route exact path='/Nakit' element={<ShopCategory category ="Nakit" />} />
+            <Route exact path='/Nakit' element={<ShopCategory  category ="Nakit" />} />
             <Route exact path='/Slike' element={<ShopCategory category="Slike" />} />
             <Route exact path='/Kip' element={<ShopCategory category="Kip"/>} />
-            <Route exact path='/Moda' element={<ShopCategory category="Moda" />} />
+            <Route exact path='/Ostali predmeti' element={<ShopCategory category="Ostali predmeti" />} />
             <Route exact path='/Magneti' element={<ShopCategory category="Magneti" />} />
 
             <Route exact path='/Contact' element={<Contact />} />
             <Route exact path="/About" element={<About />} />
-            <Route exact path='/Product' element={<Product/>} />
-            <Route exact path=':ProductId' element={<Product/>} />
+            <Route exact path='/product' element={<Product/>} >
+              <Route exact path=':productId' element={<Product/>} /> 
+              </Route> 
             <Route exact path='/ShopCategory' element={<ShopCategory/>} />
             <Route exact path='/LoginSignup' element={<LoginSignup/>} />
             <Route exact path='/cart' element={<Cart/>} />

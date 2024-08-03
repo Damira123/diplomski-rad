@@ -1,0 +1,24 @@
+.descriptionbox{
+    margin: 100px 170px;
+}
+.description-navigator{
+    display: flex;
+}
+.nav-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 360;
+    width: 170px;
+    height: 60px;
+    border:  2px solid gainsboro;
+}
+.description{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid gainsboro;
+    padding: 48px;
+    padding-bottom: 70px;
+}

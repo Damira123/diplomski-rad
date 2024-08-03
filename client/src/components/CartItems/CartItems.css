@@ -1,0 +1,100 @@
+.cartitems{
+    margin: 90px 120px;
+}
+.cartitems hr{
+    height: 3px;
+    background: rgb(161, 160, 160);
+    border: 0;
+}
+.format-main{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+    padding: 20px 0px;
+    color: #444;
+    font-size: 18px;
+    font-weight: 500;
+}
+.format{
+    font-size: 17px;
+    font-weight: 500;
+}
+.format-img{
+    height: 122px;
+}
+.remove-icon{
+    width: 15px;
+    margin: 0px 40px;
+    cursor: pointer;
+}
+.cartitems-quantity{
+    width: 64px;
+    height: 50px;
+    border: 2px solid gainsboro;
+    background: #ffff;
+}
+.items-down{
+    display: flex;
+    margin: 100px 0px;
+}
+.items-total{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 220px;
+    gap: 35px;
+}
+.total-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 16px;
+}
+.check{
+    width: 265px;
+    height: 60px;
+    outline: none;
+    border: none;
+    background: #444;
+    color: gainsboro;
+    font-size: 16px;
+    cursor: pointer;
+}
+.check:hover{
+    background-color: #606060;
+}
+.check:active{
+    transform: translateY(5px);
+}
+.promobox{
+    flex: 1;
+    font-size: 20px;
+    font-weight: 500;
+}
+.promobox p{
+    color: #444;
+}
+.box{
+    width: 500px;
+    margin-top: 16px;
+    padding-left: 20px;
+    height: 58px;
+    background: #eaeaea;
+}
+.box input{
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    width: 330px;
+    height: 50px;
+}
+.box button{
+    width: 167px;
+    height: 58px;
+    font-size: 16px;
+    background: #444;
+    cursor: pointer;
+    color: wheat;
+}
+

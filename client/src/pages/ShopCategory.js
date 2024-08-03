@@ -1,33 +1,30 @@
 import React, { useContext } from 'react'
+import { ShopContext } from '../components/Context/ShopContext'
+import Item from "../components/Item/Item"
 import "../stays/ShopCategory.css"
-import  { ShopContex } from '../components/Contexs/ShopContex'
-import Item from '../components/Item/Item'
-
-
 
 function ShopCategory(props) {
-  const {allproduts} = useContext(ShopContex)
+  const {all_product} = useContext(ShopContext)
   return (
-    <div className='shop-category'>
-       <div className='category-sort'>
-            <p>
-              <span>Prikaži od 1-4</span> od 10 proizvoda
-            </p>
-        <div className='sortcategory'>
-          Sort by
-        </div>
-        <div className='categoryproducts'>
-          {allproduts.map( (item,i) => {
-            if (props.category === item.category) {
-              return <Item key={i} id={item.id} image={item.image} name={item.name}/>
-            }
-            else{
+    <div className='shopcategory'>
+       <div className='indexsort'>
+        <p>
+          <span> Prikaži 1-10</span> od 61 suvenira
+        </p>
+       </div>
+      
+       <div className='products'>
+          {all_product.map((item,i) => {
+             if (props.category === item.category) {
+              return <Item key={i} id={item.id} name={item.name} image={item.image} 
+              new_price={item.new_price} old_price = {item.old_price} texst = {item.texst} texst1={item.texst1} />
+             }
+             else {
               return null
-            }
-          }
+             }
 
-          )}
-        </div>
+          })}
+
        </div>
     </div>
   )
