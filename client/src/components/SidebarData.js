@@ -6,6 +6,11 @@ export const SidebarData = [{
    path: "/",
    cName : "nav-text"
 },
+{
+   title :"Sinj",
+   path : "/Alkarskisinj",
+   cName : "nav-text"
+},
  {
     title: "Ostali predmeti",
     path : "Ostali predmeti",

@@ -10,6 +10,7 @@ import ShopCategory from './pages/ShopCategory';
 import LoginSignup from "./pages/LoginSignup"
 import Cart from "./pages/Cart"
 import Footer from './components/Footer';
+import Alkarskisinj from './pages/Alkarskisinj';
 function App() {
 
   const [sidebar, setSidebar] = useState(false)
@@ -22,6 +23,7 @@ function App() {
         <div className={sidebar ? "main-content active" : "main-content"}>
           <Routes>
             <Route exact path='/' element={<Home />} />
+            <Route exact path='/Alkarskisinj' element={<Alkarskisinj/>} />
             <Route exact path='/Nakit' element={<ShopCategory  category ="Nakit" />} />
             <Route exact path='/Slike' element={<ShopCategory category="Slike" />} />
             <Route exact path='/Kip' element={<ShopCategory category="Kip"/>} />

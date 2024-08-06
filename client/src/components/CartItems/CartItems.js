@@ -5,8 +5,8 @@ import { FaXmark } from "react-icons/fa6";
 
 
 function CartItems() {
- const {all_product , cartItems , removeFromCart} = useContext(ShopContext)   
- const {getTotalCartAmount} = useContext(ShopContext)
+ const {getTotalCartAmount ,all_product , cartItems , removeFromCart} = useContext(ShopContext)   
+ 
   return (
     <div className='cartitems'>
           <div className='format-main'>

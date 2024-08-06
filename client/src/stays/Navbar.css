@@ -120,8 +120,37 @@
     margin-left: 90%;
     padding: 20px;
 
+}
 
-
+@media(max-width:1200px){
+    .navbar{
+        padding: 12px 50px;
+    }
+    .navbar img{
+        width: 69px;
+    }
+    .icons{
+        gap: 30px;
+        margin-left: -40px;
+        font-size: 12px;
+    }
+}
+@media(max-width:1024px){
+    .navbar{
+        padding: 12px 30px;
+    }
+    .icons{
+        width: 30px;
+    }
+    .nav-cart-count{
+        width: 18px;
+        height: 18px;
+    }
+}
+@media(max-width:800px){
+    .navbar{
+        padding: 10px 0px;
+    }
 }
 
 

@@ -11,14 +11,14 @@ const data = [
        id : 1,
        name : "Rećine Alke",
        image : nakit6 ,
-       new_price : "$66" ,
+       new_price : "66€" ,
        category : "Nakit"
    },
    {
       id : 2 ,
       name : "Alkarski momak s leđa",
       image : slika ,
-      new_price : "$69" ,
+      new_price : "69€" ,
       category : "Slika"
 
    },
@@ -26,7 +26,7 @@ const data = [
      id : 3 ,
      name : "Velika alka štras",
      image : privjesak1,
-     new_price : "$5" ,
+     new_price : "5€" ,
      category : "Ostali predmeti"
     
     },
@@ -34,7 +34,7 @@ const data = [
         id : 4 ,
         name : "Gospa velika Marinović",
         image : kip3,
-        new_price : "$66",
+        new_price : "66€",
         category : "Kip"
     }
 

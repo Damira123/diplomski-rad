@@ -23,3 +23,51 @@
     grid-template-columns: 1fr 1fr 1fr ;
     gap: 30px;
 }
+
+@media(max-width:1280px){
+    .reletedproducts{
+        height: 70vh;
+    }
+    .reletedproducts p{
+        font-size: 20px;
+    }
+    .reletedproducts hr{
+        width: 160px;
+        height: 4px;
+    }
+    .releted-items{
+        gap: 20px;
+        margin-top: 30px;
+    }
+}
+@media(max-width:1024px){
+    .reletedproducts{
+        height: 60vh;
+    }
+    .reletedproducts p{
+        font-size: 20px;
+    }
+    .reletedproducts hr{
+        width: 120px;
+        height: 3px;
+    }
+    .releted-items{
+        gap: 15px;
+        margin-top: 20px;
+    }
+}
+@media(max-width:800px){
+    .reletedproducts{
+        height: 50vh;
+        gap: 6px;
+    }
+    .reletedproducts p{
+        font-size: 15px;
+    }
+    .reletedproducts hr{
+       width: 100px;
+    }
+    .releted-items{
+        gap: 5px;
+    }
+}

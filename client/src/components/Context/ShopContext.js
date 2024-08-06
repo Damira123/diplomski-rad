@@ -23,18 +23,34 @@ const ShopContextProvider = (props) => {
     const removeFromCart = (itemId) => {
         setCartItems((prev) => ({...prev,[itemId] : prev[itemId]-1}))
     }
-
     const getTotalCartAmount = () => {
-        let totalAmount = 0
-        for(const item in cartItems) {
-            if(cartItems[item] > 0) {
-                let itemInfo = all_product.find((product) => product.id === item)
-                totalAmount += itemInfo.new_price * cartItems[item]
+        let totalAmount = 0;
+    
+        for (const item in cartItems) {
+            if (cartItems[item] > 0) {
+                // Pretvori item u broj kako bi se usporedio s product.id koji je također broj
+                let itemInfo = all_product.find((product) => product.id === Number(item));
+    
+                // Provjeri je li itemInfo pronađen i ima li new_price
+                if (itemInfo && itemInfo.new_price) {
+                    // Pretvori new_price iz stringa u broj
+                    let price = parseFloat(itemInfo.new_price);
+    
+                    if (!isNaN(price)) {
+                        totalAmount += price * cartItems[item];
+                    } else {
+                        console.warn(`Cijena za proizvod s ID-om ${item} nije valjan broj.`);
+                    }
+                } else {
+                    console.warn(`Proizvod s ID-om ${item} nije pronađen.`);
+                }
             }
-        return totalAmount
         }
-        
+    
+        return totalAmount;
     }
+    
+   
     
 
     const getTotalcard = () => {
@@ -50,7 +66,7 @@ const ShopContextProvider = (props) => {
     
     
    
-    const contextValue = {getTotalCartAmount  ,getTotalcard,  all_product, cartItems , addToCart ,removeFromCart}
+    const contextValue = {getTotalCartAmount,  getTotalcard,  all_product, cartItems , addToCart ,removeFromCart}
 
     return (
         <ShopContext.Provider value={contextValue} >

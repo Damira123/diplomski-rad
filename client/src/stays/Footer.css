@@ -62,3 +62,33 @@
     justify-content: center;
     align-items: center;
 }
+
+@media(max-width:800px){
+ .contact1{
+    padding: 1px 24px;
+    margin-left: 33px;
+    
+ }
+ .copy{
+    height: 10px;
+ }
+ .letter p{
+    font-size: 15px;
+ }
+ .contact1 h1{
+    font-size: 12px;
+ }
+ .letter input{
+    width: 260px;
+    height: 40px;
+ }
+ .letter button{
+   margin-left: 170px;
+   width: 100px;
+   
+
+ }
+}
+
+   
+   

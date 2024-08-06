@@ -557,7 +557,7 @@ const all_product = [
          id : 4 ,
          name : "Gospa velika Marinović",
          image : kip3,
-         new_price : "$66",
+         new_price : "66€",
          category : "Kip",
          texst : "Statua izrađena od gipsa u bijeloj boji po uzoru Gospinog kipa",
          texst1 : "Visina statue : 40cm"
