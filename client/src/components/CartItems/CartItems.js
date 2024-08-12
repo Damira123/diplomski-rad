@@ -1,11 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import "../CartItems/CartItems.css"
 import { ShopContext } from '../Context/ShopContext'
 import { FaXmark } from "react-icons/fa6";
 
 
 function CartItems() {
- const {getTotalCartAmount ,all_product , cartItems , removeFromCart} = useContext(ShopContext)   
+ const {getTotalCartAmount, cartItems , removeFromCart} = useContext(ShopContext)   
+ const {products, fetchProducts} = useContext(ShopContext)
+ useEffect(() => {
+  fetchProducts()
+ }, [])
  
   return (
     <div className='cartitems'>
@@ -18,7 +22,7 @@ function CartItems() {
             <p>Ukloni</p>
           </div>
           <hr/>
-         {all_product.map((e)=>{
+         {products.map((e)=>{
             if (cartItems[e.id]>0) 
             {
               return  <div>

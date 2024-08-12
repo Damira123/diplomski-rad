@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, product } from 'react'
 import { ShopContext } from '../components/Context/ShopContext'
 import { useParams } from 'react-router-dom';
 import Bread from '../components/Bread.js/Bread';
@@ -7,9 +7,11 @@ import DescriptionBox from '../components/DescriptionBox/DescriptionBox';
 import ReletedProducts from '../components/ReletedProduts/ReletedProducts';
 
 function Product() {
-    const {all_product} = useContext(ShopContext);
+    const {products , fetchProduct} = useContext(ShopContext);
     const {productId} = useParams() ;
-    const product = all_product.find((e) => e.id === Number(productId))
+    useEffect(()=>{
+      fetchProduct(productId) //Dohvati proizvod kada se komponenta učitava
+    }, [productId,fetchProduct])
     
   return (
     <div>
