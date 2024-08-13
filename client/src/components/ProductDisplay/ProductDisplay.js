@@ -2,15 +2,20 @@ import React, { useContext } from 'react'
 import "../ProductDisplay/ProductDisplay.css"
 import { ShopContext } from '../Context/ShopContext';
 
+
 function ProductDisplay(props) {
-    const {product} = props;
+   const {product} = props;
     const {addToCart} = useContext(ShopContext)
+    if (!product) {
+      return <div>Loading...</div>; // ili neka druga poruka za loading
+  }
+   
     
   return (
     <div className='productdisplay'>
       <div className='product-left'>
-          <div className='product-imglist'>
-             <img src={product.image} alt='' />
+      <div className='product-imglist'>
+            <img src={product.image} alt='' />
              <img src={product.image} alt='' />
              <img src={product.image} alt='' />
           </div>
@@ -24,10 +29,10 @@ function ProductDisplay(props) {
             {product.new_price}
          </div>
          <div className='product-texst'>
-            {product.texst}
+            {product.description}
          </div>
          <div className='product-texst1'>
-            {product.texst1}
+            {product.dimenzion}
          </div>
          <div className='product-add'>
             <button onClick={() => {addToCart(product.id)}}>DODAJ U KOŠARICU</button>

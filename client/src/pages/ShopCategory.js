@@ -20,7 +20,7 @@ function ShopCategory(props) {
           {products.map((item,i) => {
              if (props.category === item.category) {
               return <Item key={i} id={item.id} name={item.name} image={item.image} 
-              new_price={item.new_price} old_price = {item.old_price} texst = {item.texst} texst1={item.texst1} />
+              new_price={item.new_price} category={item.category} description = {item.description} dimenzion={item.dimenzion} />
              }
              else {
               return null

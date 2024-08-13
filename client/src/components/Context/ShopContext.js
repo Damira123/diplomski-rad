@@ -34,6 +34,7 @@ const ShopContextProvider = (props) => {
         try {
             const { data } = await axios.get(`http://localhost:4000/products/${id}`); // ista  stvar
             setProduct(data);
+           
         } catch (error) {
             if (!error.response) {
                 setErrMsg("No server response");

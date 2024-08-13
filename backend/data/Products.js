@@ -1,7 +1,7 @@
 
 const products = [
     {
-        
+        id : "1",
         image : "/public/shop/kameno.jfif",
         name : "Gospa Sinjska",
         new_price : "46,45€",
