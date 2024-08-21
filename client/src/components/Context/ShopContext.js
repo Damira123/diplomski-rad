@@ -75,10 +75,11 @@ const ShopContextProvider = (props) => {
     
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
+                // Proverava da li je item u string formatu
                 let itemInfo = products.find((product) => product._id === item);
                 if (itemInfo) {
                     let price = parseFloat(itemInfo.new_price);
-                    
+    
                     if (!isNaN(price)) {
                         totalAmount += price * cartItems[item];
                     } else {
@@ -92,32 +93,45 @@ const ShopContextProvider = (props) => {
     
         return totalAmount;
     };
-    
-
-
     const getTotalCard = () => {
         let totalItem = 0;
+    
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
                 totalItem += cartItems[item];
             }
         }
+        
         return totalItem;
     };
+        
 
     const loadCartData = async (token) => {
-        const response = await axios.post("/api/cart/get" , {} , {headers:{token}})
-        setCartItems(response.data.cartData)
-    }
-
-    useEffect(()=>{
-        async function loadData() {
-        if (localStorage.getItem("token")) {
-            setToken(localStorage.getItem("token"))
-            await loadCartData(localStorage.getItem("token"))
+        try {
+            const response = await axios.post(`${url}/api/cart/get`, {}, { headers: { token } });
+            
+            if (response.data.success) {
+                setCartItems(response.data.cartData); // Ažuriraj cartItems sa podacima iz baze
+            } else {
+                console.error("Nije moguće učitati podatke o košarici:", response.data.message);
+            }
+        } catch (error) {
+            console.error("Greška prilikom učitavanja podataka o košarici:", error);
         }
-    } loadData()
-     }, [])
+    };
+    
+
+    useEffect(() => {
+        const loadData = async () => {
+            if (localStorage.getItem("token")) {
+                setToken(localStorage.getItem("token"));
+                await loadCartData(localStorage.getItem("token"));
+            }
+        };
+    
+        loadData();
+    }, [token]); // Ova linija omogućava ponovno učitavanje podataka kada se token promeni
+    
       
 
     const contextValue = {
