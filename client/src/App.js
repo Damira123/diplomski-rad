@@ -7,19 +7,21 @@ import About from "./pages/About"
 import Home from './pages/Home';
 import Product from "./pages/Product"
 import ShopCategory from './pages/ShopCategory';
-import LoginSignup from "./pages/LoginSignup"
 import Cart from "./pages/Cart"
 import Footer from './components/Footer';
 import Alkarskisinj from './pages/Alkarskisinj';
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import LoginPopup from './pages/LoginPopup';
 function App() {
 
   const [sidebar, setSidebar] = useState(false)
-
+  const [showLogin, setShowLogin] = useState(false) 
   return (
-
+    <>
+     {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></> }
     <div className="App">
       <Router>
-        < Navbar sidebar={sidebar} setSidebar={setSidebar} />
+        < Navbar sidebar={sidebar} setSidebar={setSidebar} setShowLogin={setShowLogin} />
         <div className={sidebar ? "main-content active" : "main-content"}>
           <Routes>
             <Route exact path='/' element={<Home />} />
@@ -35,15 +37,15 @@ function App() {
             <Route  path='/product/:productId' element={<Product/>}  />
               
             <Route exact path='/ShopCategory' element={<ShopCategory/>} />
-            <Route exact path='/LoginSignup' element={<LoginSignup/>} />
             <Route exact path='/cart' element={<Cart/>} />
+            <Route exact path='/order' element={<PlaceOrder/>} />
           </Routes>
         </div>
         <Footer/>
         
       </Router>
     </div>
-
+   </>
   );
 
 }

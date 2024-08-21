@@ -19,7 +19,7 @@ function ShopCategory(props) {
        <div className='products'>
           {products.map((item,i) => {
              if (props.category === item.category) {
-              return <Item key={i} id={item.id} name={item.name} image={item.image} 
+              return <Item key={i} _id={item._id} name={item.name} image={item.image} 
               new_price={item.new_price} category={item.category} description = {item.description} dimenzion={item.dimenzion} />
              }
              else {

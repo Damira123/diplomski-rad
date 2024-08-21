@@ -3,28 +3,48 @@ import Icon from "../assents/images.jfif"
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
 import { SidebarData } from "./SidebarData";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { SlBasketLoaded } from "react-icons/sl";
 import { VscAccount } from "react-icons/vsc";
-import { useContext, useState } from "react";
+import { IoIosLogOut } from "react-icons/io";
+import { useContext } from "react";
 import { ShopContext } from "./Context/ShopContext";
-function Navbar({ sidebar, setSidebar }) {
+
+function Navbar({ sidebar, setSidebar , setShowLogin  }) {
   const showSidebar = () => setSidebar(!sidebar)
   const {getTotalCard} = useContext(ShopContext)
+  const { token,setToken} = useContext(ShopContext)
+  const navigate = useNavigate()
+  const logout = ()=> {
+    localStorage.removeItem("token")
+    setToken("")
+    navigate("/")
+  }
   return (
     <>
       <div className="navbar">
         <Link to="#" className="menu-bars">
           <RxHamburgerMenu onClick={showSidebar} />
         </Link>
-      <Link to ="/" > <img src={Icon} /> </Link>
+      <Link to ="/" > <img src={Icon} alt="" /> </Link>
         <div className="basket">
           <div className="basket1">
           <div className="nav-cart-count">{getTotalCard()}</div>
             <Link to="/Cart"><SlBasketLoaded /></Link>
           </div>
           <div className="basket2">
-            <Link to="/LoginSignup"><VscAccount /></Link></div>
+            {!token?  <Link onClick={() => setShowLogin(true)}> Sign in </Link>
+             : <div className="navbar-profile">
+                <VscAccount/>
+                <ul className="nav-proile-drop">
+                  <li onClick={logout} >
+                    <IoIosLogOut/>
+                    <p>Logout</p>
+                  </li>
+                </ul>
+             </div>
+                   }
+            </div>
         </div>
 
       </div>

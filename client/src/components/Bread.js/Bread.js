@@ -6,10 +6,10 @@ import { ShopContext } from '../Context/ShopContext.js'
 
 
 function Bread(props) {
- //const {products, fetchProducts} = useContext(ShopContext)
- // useEffect(() => {
-   //fetchProducts()
-  //}, [])
+ const {products, fetchProducts} = useContext(ShopContext)
+  useEffect(() => {
+   fetchProducts()
+  }, [])
    const {product} = props
    if (!product) {
     return null; // Ili možete prikazati neku poruku, npr. "Loading..."

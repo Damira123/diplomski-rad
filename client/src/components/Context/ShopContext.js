@@ -1,7 +1,9 @@
-import React, { createContext, useState, useRef } from 'react';
+import React, { createContext, useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 
 export const ShopContext = createContext(null);
+
+
 
 const getDefaultCart = () => {
     let cart = {};
@@ -17,6 +19,8 @@ const ShopContextProvider = (props) => {
     const [product, setProduct] = useState(null);
     const [errMsg, setErrMsg] = useState('');
     const errRef = useRef(null);
+    const url = "http://localhost:4000"
+    const [token,setToken] = useState("")
 
     const fetchProducts = async () => {
         try {
@@ -45,25 +49,36 @@ const ShopContextProvider = (props) => {
         }
     };
 
-    const addToCart = (itemId) => {
-        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-        console.log(cartItems);
+   
+    const addToCart = async (itemId) => {
+            setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+      
+        if(token){
+            await axios.post(url + "/api/cart/add" , {itemId} , {headers:{token}})
+        }    
     };
-
-    const removeFromCart = (itemId) => {
-        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    
+    const removeFromCart = async(itemId) => {
+        setCartItems((prev) => {
+            if (prev[itemId] > 0) { // Ne smanjuj količinu ispod nule
+                return { ...prev, [itemId]: prev[itemId] - 1 };
+            }
+            return prev;
+        });
+        if(token) {
+            await axios.post(url + "/api/cart/remove", {itemId} , {headers:{token}} )
+        }
     };
-
+    
     const getTotalCartAmount = () => {
         let totalAmount = 0;
-
+    
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
-                let itemInfo = products.find((product) => product.id === Number(item));
-
-                if (itemInfo && itemInfo.new_price) {
+                let itemInfo = products.find((product) => product._id === item);
+                if (itemInfo) {
                     let price = parseFloat(itemInfo.new_price);
-
+                    
                     if (!isNaN(price)) {
                         totalAmount += price * cartItems[item];
                     } else {
@@ -74,9 +89,11 @@ const ShopContextProvider = (props) => {
                 }
             }
         }
-
+    
         return totalAmount;
     };
+    
+
 
     const getTotalCard = () => {
         let totalItem = 0;
@@ -88,6 +105,21 @@ const ShopContextProvider = (props) => {
         return totalItem;
     };
 
+    const loadCartData = async (token) => {
+        const response = await axios.post("/api/cart/get" , {} , {headers:{token}})
+        setCartItems(response.data.cartData)
+    }
+
+    useEffect(()=>{
+        async function loadData() {
+        if (localStorage.getItem("token")) {
+            setToken(localStorage.getItem("token"))
+            await loadCartData(localStorage.getItem("token"))
+        }
+    } loadData()
+     }, [])
+      
+
     const contextValue = {
         getTotalCartAmount,
         getTotalCard,
@@ -98,7 +130,11 @@ const ShopContextProvider = (props) => {
         removeFromCart,
         fetchProducts,
         fetchProduct,
-        errMsg
+        errMsg,
+        url,
+        token,
+        setToken
+
     };
 
     return (
@@ -106,6 +142,7 @@ const ShopContextProvider = (props) => {
             {props.children}
         </ShopContext.Provider>
     );
-};
+}
 
-export default ShopContextProvider;
+
+export default ShopContextProvider 

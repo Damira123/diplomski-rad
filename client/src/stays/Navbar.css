@@ -40,10 +40,50 @@
     background: rgb(105, 102, 97);
 }
 
-.basket2 {
-    padding: 14px;
-    margin-top: -7px;
+.basket2 a {
+   cursor: pointer;
+   background: transparent;
+   font-size: 20px;
+   color:  #0d6efd;
+   font-weight: 400;
+   transition: 0.3s;
+   text-decoration: none;
 }
+.navbar-profile{
+    position: relative;
+}
+.nav-proile-drop{
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 1;
+    height: 50px;
+}
+.navbar-profile:hover .nav-proile-drop{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff2ef;
+    padding: 5px 20px;
+    border-radius: 4px;
+    outline:  2px solid white;
+    list-style: none;
+}
+.nav-proile-drop li{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.nav-proile-drop svg{
+    width: 20px;
+    
+}
+.nav-proile-drop li :hover{
+    color: #cca3c2;
+}
+
 
 .menu-bars {
     margin-left: 2rem;
@@ -152,7 +192,10 @@
         padding: 10px 0px;
     }
 }
-
+.basket2 svg{
+    cursor: pointer;
+    color: rgba (var(--bs-link-color-rgb))
+}
 
 
 

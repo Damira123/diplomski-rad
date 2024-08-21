@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import "../ProductDisplay/ProductDisplay.css"
 import { ShopContext } from '../Context/ShopContext';
 
@@ -6,6 +6,7 @@ import { ShopContext } from '../Context/ShopContext';
 function ProductDisplay(props) {
    const {product} = props;
     const {addToCart} = useContext(ShopContext)
+  
     if (!product) {
       return <div>Loading...</div>; // ili neka druga poruka za loading
   }
@@ -35,7 +36,7 @@ function ProductDisplay(props) {
             {product.dimenzion}
          </div>
          <div className='product-add'>
-            <button onClick={() => {addToCart(product.id)}}>DODAJ U KOŠARICU</button>
+            <button onClick={() => {addToCart(product._id)}}>DODAJ U KOŠARICU</button>
          </div>
       </div>
 
