@@ -57,23 +57,23 @@
     display: none;
     right: 0;
     z-index: 1;
-    height: 50px;
+    
 }
 .navbar-profile:hover .nav-proile-drop{
     display: flex;
     flex-direction: column;
     gap: 10px;
     background-color: #fff2ef;
-    padding: 5px 20px;
+    padding: 12px 25px;
     border-radius: 4px;
     outline:  2px solid white;
     list-style: none;
 }
-.nav-proile-drop li{
+.nav-proile-drop li {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
 }
 .nav-proile-drop svg{

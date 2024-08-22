@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import "../CartItems/CartItems.css"
 import { ShopContext } from '../Context/ShopContext'
 import { FaXmark } from "react-icons/fa6";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
@@ -16,7 +16,7 @@ function CartItems() {
         console.log(products); // Provjeri da li su proizvodi uspješno dohvaćeni
       }, [products]);
 
-      const navigate = useNavigate
+      
  
   return (
     <div className='cartitems'>

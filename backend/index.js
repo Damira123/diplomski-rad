@@ -3,14 +3,13 @@ const app = express();
 const port = 4000
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
-const multer = require("multer");
 const path = require ("path");
-const cors = require("cors");
-const {type} = require("os")
+const cors = require("cors")
 const products = require("../backend/data/Products.js");
 const { error } = require("console");
 const  userRouter  = require("./Routes/userRoute.js");
 const cartRouter = require("./Routes/cartRoute.js");
+const orderRouter = require("./Routes/orderRoute.js");
 
 
 require("dotenv").config()
@@ -95,6 +94,7 @@ let product = await Product.findById(req.params.id);
 
 app.use("/api/user", userRouter)
 app.use("/api/cart" , cartRouter)
+app.use("/api/order" , orderRouter)
 
 
 

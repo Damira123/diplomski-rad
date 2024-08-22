@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import Alkarskisinj from './pages/Alkarskisinj';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 import LoginPopup from './pages/LoginPopup';
+
 function App() {
 
   const [sidebar, setSidebar] = useState(false)
@@ -39,6 +40,7 @@ function App() {
             <Route exact path='/ShopCategory' element={<ShopCategory/>} />
             <Route exact path='/cart' element={<Cart/>} />
             <Route exact path='/order' element={<PlaceOrder/>} />
+           
           </Routes>
         </div>
         <Footer/>
