@@ -5,6 +5,7 @@ import axios from 'axios'
 
 
 
+
 function PlaceOrder() {
     const {getTotalCartAmount , products, cartItems , token, url} = useContext(ShopContext)
     const [data ,setData] = useState({
@@ -85,7 +86,7 @@ function PlaceOrder() {
                     </div>
                 </div>
                
-               <button type='submit' className='check'>Nastavi sa plaćanjem</button>
+               <button  type='submit' className='check'>Nastavi sa plaćanjem</button>
                
             </div>
       </div>
