@@ -2,12 +2,13 @@ import React, { useContext,  useState  } from 'react'
 import "../PlaceOrder/PlaceOrder.css"
 import { ShopContext } from '../Context/ShopContext'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 
 
 function PlaceOrder() {
-    const {getTotalCartAmount , products, cartItems , token, url} = useContext(ShopContext)
+    const {getTotalCartAmount , products, cartItems , token, url , removeFromCart } = useContext(ShopContext)
     const [data ,setData] = useState({
       Ime:"",
       Prezime:"",
@@ -17,6 +18,7 @@ function PlaceOrder() {
       Kod :"",
       Telefon: ""
     })
+    const navigate = useNavigate()
     
    const onChangeHandler =(event) => {
     const name = event.target.name
@@ -40,12 +42,13 @@ function PlaceOrder() {
         amount:getTotalCartAmount() + 3
       }
       let response = await axios.post(`${url}/api/order/place`, orderData, { headers: { token } });
-      if(response.data.success){
-        
-       }
-       else{
-        alert("Error")
-       }
+      if (response.data.success) {
+        removeFromCart(); // Clear the cart after successful order
+        alert("Uspješno kupljeno!"); // Display success message
+        navigate('/'); // Redirect to the home page
+      } else {
+        alert("Error");
+      }
 
 };
 
@@ -86,7 +89,7 @@ function PlaceOrder() {
                     </div>
                 </div>
                
-               <button  type='submit' className='check'>Nastavi sa plaćanjem</button>
+               <button  type='submit' className='check'>Kupi!</button>
                
             </div>
       </div>

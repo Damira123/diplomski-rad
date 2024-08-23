@@ -71,13 +71,6 @@ function CartItems() {
                <button className='check'>Provjeri</button>
                </Link>
             </div>
-            <div className='promobox'>
-                <p>Imaš li kupon ?</p>
-                <div className='box'>
-                <input type='text' placeholder='Kod za popust...'/>
-                <button>DODAJ</button>
-                </div>
-            </div>
          </div>
 
 

@@ -12,13 +12,15 @@ import Footer from './components/Footer';
 import Alkarskisinj from './pages/Alkarskisinj';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 import LoginPopup from './pages/LoginPopup';
-import Verify from './pages/Verify';
+
+
 
 function App() {
 
   const [sidebar, setSidebar] = useState(false)
   const [showLogin, setShowLogin] = useState(false) 
   return (
+    
     <>
      {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></> }
     <div className="App">
@@ -41,7 +43,7 @@ function App() {
             <Route exact path='/ShopCategory' element={<ShopCategory/>} />
             <Route exact path='/cart' element={<Cart/>} />
             <Route exact path='/order' element={<PlaceOrder/>} />
-            <Route exact path='/verify' element={<Verify/>} />
+           
            
           </Routes>
         </div>
@@ -50,6 +52,7 @@ function App() {
       </Router>
     </div>
    </>
+   
   );
 
 }

@@ -56,11 +56,13 @@
     font-size: 22px;
     color: gainsboro;
     margin: 5px;
+    
 }
 .copy p{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -45px;
 }
 
 @media(max-width:800px){
@@ -73,8 +75,9 @@
     height: 10px;
  }
  .letter p{
-    font-size: 15px;
+    font-size: 10px;
  }
+
  .contact1 h1{
     font-size: 12px;
  }

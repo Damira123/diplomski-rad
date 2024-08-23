@@ -41,11 +41,6 @@ function Navbar({ sidebar, setSidebar , setShowLogin  }) {
                     <IoIosLogOut/>
                     <p>Logout</p>
                   </li>
-                  
-                  <li onClick={logout} >
-                    <SlBasketLoaded/>
-                    <p>Naružba</p>
-                  </li>
                 </ul>
              </div>
                    }

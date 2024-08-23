@@ -1,12 +1,15 @@
 import React from 'react'
 import "../stays/Footer.css"
-
 import { TiSocialInstagram } from "react-icons/ti";
 import { TiSocialTwitter } from "react-icons/ti";
 import { TiSocialFacebook } from "react-icons/ti";
+import Icon from "../assents/images.jfif"
+
+
 
 
 function Footer() {
+  
   return (
     <div className='footer'>
        <div className='contact'>
@@ -15,13 +18,6 @@ function Footer() {
             <p>091 224 567</p>
             <p>Pon-Pet od 7h do 19h</p>
             <p>info@visitSinj.hr</p>
-           </div>
-           <div className='letter'>
-            <p>PRIJAVITE SE ZA DODATNE INFORMACIJE</p>
-            <div >
-               <input type='email' placeholder='   Vaš email...' />
-               <button>Prijavi me.</button>
-            </div>
             <div className='social'>
                <a href='https://web.facebook.com/?_rdc=1&_rdr'>
                  <TiSocialFacebook/>
@@ -33,9 +29,14 @@ function Footer() {
                   <TiSocialInstagram/>
                 </a>
             </div>
+           
            </div>
-          
-        </div >
+              <div className="letter">
+              <p>
+              "Sinj, grad alkara i viteštva, čuvar slavne povijesti i ponosne tradicije."</p>  
+              </div>
+            </div>
+           
         <div className='copy' >
         <hr/>
         <p>Copywrite @ 2024 - all right reserved</p> </div>

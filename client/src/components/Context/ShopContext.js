@@ -14,6 +14,7 @@ const getDefaultCart = () => {
 };
 
 const ShopContextProvider = (props) => {
+    
     const [cartItems, setCartItems] = useState(getDefaultCart());
     const [products, setProducts] = useState([]);
     const [product, setProduct] = useState(null);
@@ -147,7 +148,8 @@ const ShopContextProvider = (props) => {
         errMsg,
         url,
         token,
-        setToken
+        setToken,
+       
 
     };
 
