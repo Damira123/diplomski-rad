@@ -14,10 +14,8 @@ function CartItems() {
       }, [])
       useEffect(() => {
         console.log(products); // Provjeri da li su proizvodi uspješno dohvaćeni
-      }, [products]);
+      }, [products] );
 
-      
- 
   return (
     <div className='cartitems'>
           <div className='format-main'>

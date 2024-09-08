@@ -1,9 +1,6 @@
 const orderModel = require("../models/orderModel.js")
 const userModel = require("../models/userModels.js")
 
-
-
-
 // placing user order for frontend
 const placeOrder = async(req , res) => {
    
@@ -26,9 +23,5 @@ const placeOrder = async(req , res) => {
   }
 
 }
-
-
-
-
 
 module.exports= {placeOrder}

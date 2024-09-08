@@ -52,11 +52,15 @@ const ShopContextProvider = (props) => {
 
    
     const addToCart = async (itemId) => {
-            setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+            setCartItems((prev) => ({ ...prev, [itemId]: (prev[itemId] || 0)+ 1 }));
       
-        if(token){
-            await axios.post(url + "/api/cart/add" , {itemId} , {headers:{token}})
-        }    
+            if (token) {
+                try {
+                    await axios.post(url + "/api/cart/add", { itemId }, { headers: { token } });
+                } catch (error) {
+                    console.error("Greška prilikom dodavanja proizvoda u košaricu:", error);
+                }
+            }
     };
     
     const removeFromCart = async(itemId) => {
@@ -66,8 +70,12 @@ const ShopContextProvider = (props) => {
             }
             return prev;
         });
-        if(token) {
-            await axios.post(url + "/api/cart/remove", {itemId} , {headers:{token}} )
+        if (token) {
+            try {
+                await axios.post(url + "/api/cart/remove", { itemId }, { headers: { token } });
+            } catch (error) {
+                console.error("Greška prilikom uklanjanja proizvoda iz košarice:", error);
+            }
         }
     };
     
@@ -131,7 +139,7 @@ const ShopContextProvider = (props) => {
         };
     
         loadData();
-    }, [token]); // Ova linija omogućava ponovno učitavanje podataka kada se token promeni
+    }, []); // Ova linija omogućava ponovno učitavanje podataka kada se token promeni
     
       
 

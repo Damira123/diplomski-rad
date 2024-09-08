@@ -15,7 +15,6 @@ function RE() {
           src={sinj31}
           alt="First slide"
         />
-        
       </Carousel.Item>
       <Carousel.Item>
         <img
@@ -32,7 +31,6 @@ function RE() {
           alt="Third slide"
         />
       </Carousel.Item>
-      
       <Carousel.Item>
         <img
           className="d-block w-100"
@@ -43,6 +41,5 @@ function RE() {
     </Carousel>
         </>
     </div>
-  )
-}
+  )}
 export default RE

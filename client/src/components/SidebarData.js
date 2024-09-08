@@ -35,14 +35,9 @@ export const SidebarData = [{
    title: "Kipići",
    path:"/Kip",
    cName : "nav-text"
-},
+}
 
- 
- {
-    title:"Kontakt",
-    path:"/Contact",
-    cName : "nav-text"
- },
+
 
 ]
 
