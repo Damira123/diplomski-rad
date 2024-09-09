@@ -27,9 +27,7 @@ function ShopCategory(props) {
   return (
     <div className='shopcategory'>
        <div className='indexsort'>
-       <p>
-          <span> Prikaži 1-10</span> od suvenira
-        </p>
+       
          
         <input
           type="text"

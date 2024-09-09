@@ -56,7 +56,7 @@ function PlaceOrder() {
   return (
     <form onSubmit={placeOrder} className='place-order'>
       <div className='place-order-left'>
-        <p className='title'> Informacije o isporuki </p>
+        <p className='title'> Informacije o isporuci </p>
         <div className='multi-fields'>
             <input required name='Ime' onChange={onChangeHandler} value={data.Ime} type='text' placeholder='Ime'/>
             <input required name='Prezime' onChange={onChangeHandler} value={data.Prezime} type='text' placeholder='Prezime'/>

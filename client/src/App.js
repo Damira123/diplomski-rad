@@ -2,7 +2,6 @@ import './App.css';
 import { useState } from "react";
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import About from "./pages/About"
 import Home from './pages/Home';
 import Product from "./pages/Product"
 import ShopCategory from './pages/ShopCategory';
@@ -36,7 +35,7 @@ function App() {
             <Route exact path='/Magneti' element={<ShopCategory category="Magneti" />} />
 
             
-            <Route exact path="/About" element={<About />} />
+            
             <Route  path='/product/:productId' element={<Product/>}  />
               
             <Route exact path='/ShopCategory' element={<ShopCategory/>} />

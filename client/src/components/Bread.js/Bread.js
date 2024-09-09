@@ -16,7 +16,7 @@ function Bread(props) {
   }
   return (
     <div className='bread'>
-          Home <FaArrowRight/> Suvenirnica  <FaArrowRight/> {product.name} <FaArrowRight/> {product.category}
+          Home <FaArrowRight/> Suvenirnica  <FaArrowRight/> {product.category} <FaArrowRight/> {product.name}
     </div>
   )
 }

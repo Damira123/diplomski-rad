@@ -3,10 +3,6 @@
     margin: 10px 160px;
     align-items: center;
 }
-.indexsort p span{
-    font-weight: 600;
-    font-size: 25px;
-}
 
 .indexsort svg{
     margin-left: -60px;
@@ -20,8 +16,6 @@ input.search-inputs{
     border-color: aliceblue;
     
 }
-
-
 .products{
     margin: 20px 140px;
     display: grid;
