@@ -5,8 +5,6 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 
-
-
 function PlaceOrder() {
     const {getTotalCartAmount , products, cartItems , token, url , removeFromCart } = useContext(ShopContext)
     const [data ,setData] = useState({

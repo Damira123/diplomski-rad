@@ -39,7 +39,7 @@ function Footer() {
            
         <div className='copy' >
         <hr/>
-        <p>Copywrite @ 2024 - all right reserved</p> </div>
+        <p>Copywrite @ 2025 - all right reserved</p> </div>
      </div>
   )
 }

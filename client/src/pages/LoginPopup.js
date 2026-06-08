@@ -26,26 +26,72 @@ function LoginPopup({setShowLogin}) {
       setData(data=>({...data,[name]:value }))
     }
 
-    const onLogin = async(event) => {
-        event.preventDefault()
-        let newUrl = url
-        if (currState === "Login") {
-          newUrl += "/api/user/login"
-        }
-        else{
-          newUrl += "/api/user/register"
-        }
-        const response = await axios.post(newUrl,data)
-       if (response.data.success) {
-         setToken(response.data.token)
-         localStorage.setItem("token" , response.data.token)
-         setShowLogin(false)
-       }
-       else{
-        alert(response.data.message)
-       }
+    //nadolje u Word + izbrisati komentare ispod + ovaj
+    const onLogin = async (event) => {
+  event.preventDefault();
 
+  let newUrl = url;
+
+  if (currState === "Login") {
+    newUrl += "/api/user/login";
+  } else {
+    newUrl += "/api/user/register";
+  }
+
+  try {
+    console.log("Request URL:", newUrl);
+    console.log("Request Data:", data);
+
+    const response = await axios.post(newUrl, data);
+
+    console.log("Server Response:", response.data);
+
+    if (response.data.success) {
+      setToken(response.data.token);
+      localStorage.setItem("token", response.data.token);
+      setShowLogin(false);
+    } else {
+      alert(response.data.message || "Login/registration failed.");
     }
+  } catch (error) {
+    console.error("Axios Error:", error);
+
+    if (error.response) {
+      console.error("Status:", error.response.status);
+      console.error("Response Data:", error.response.data);
+
+      alert(
+        error.response.data.message ||
+        error.response.data.error ||
+        "Server error occurred."
+      );
+    } else if (error.request) {
+      alert("Cannot connect to the server. Please check if the backend is running.");
+    } else {
+      alert("An unexpected error occurred.");
+    }
+  }
+};
+    // const onLogin = async(event) => {
+    //     event.preventDefault()
+    //     let newUrl = url
+    //     if (currState === "Login") {
+    //       newUrl += "/api/user/login"
+    //     }
+    //     else{
+    //       newUrl += "/api/user/register"
+    //     }
+    //     const response = await axios.post(newUrl,data)
+        
+    //    if (response.data.success) {
+    //      setToken(response.data.token)
+    //      localStorage.setItem("token" , response.data.token)
+    //      setShowLogin(false)
+    //    }
+    //    else{
+    //     alert(response.data.message)
+    //    }
+    // }
   return (
     <div className='login-popup'>
        <form onSubmit={onLogin}className='login-popup-container'>

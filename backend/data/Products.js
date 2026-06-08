@@ -1,7 +1,7 @@
 
 const products = [
     {
-        id : "1",
+        
         image : "/public/shop/kameno.jfif",
         name : "Gospa Sinjska",
         new_price : "46,45€",
@@ -626,7 +626,7 @@ const products = [
      },
      {
         
-        image: "/public/NewCollection/botuni.webp" ,
+        image: "/public/NewCollections/botuni.webp" ,
         name : "Šibenski botuni",
         category : "Nakit",
         new_price : "100€",
@@ -638,7 +638,7 @@ const products = [
     {
         
         name : "Naušnice rećine alke",
-        image : "/public/NewCollection/nakit10.webp",
+        image : "/public/NewCollections/nakit10.webp",
         category : "Nakit",
         new_price : "100€",
         description : "Tradicijske rećine remek dijelo u malome.Njihov šarm dodatno naglašuju dodaci poput bisera i koralja.",
@@ -650,7 +650,7 @@ const products = [
     {
         
         name : "Splitske rećine",
-        image : "/public/NewCollection/nakit20.webp",
+        image : "/public/NewCollections/nakit20.webp",
         category : "Nakit",
         new_price: "120€",
         description: "Ovaj nakit pronađen je u 18.stoljeću, a njegov neodoljivi dizajn podsjeća na cvijet od čipke",
@@ -663,7 +663,7 @@ const products = [
         
         name : "Naušnice Ring",
         category : "Nakit",
-        image : "/public/NewCollection/nakit4.jpeg",
+        image : "/public/NewCollections/nakit4.jpeg",
         new_price : "3,98€",
         description : "Naušnice u zlatnoj boji sa privjeskom alke.",
         dimenzion : "Bižuterija",
